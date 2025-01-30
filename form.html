@@ -1,38 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <title>Formulário de Exercícios</title>
 </head>
 
 <body>
     <h1>Quantidade de Exercícios</h1>
     <form id="formularioQuantExer">
-        <label for="quantExer">Nome do Exercício:</label>
-        <input type="number" id="quantExer" name="quantExer" required>
-        <button type="calc" id="calc">Calcular</button>
-
+        <label for="quantExer">Quantidade de Exercícios:</label>
+        <input type="number" id="quantExer" name="quantExer" min="1" required>
+        <button type="button" id="calc">Calcular</button>
     </form>
-    <script src="script_form.js"></script>
-</body>
 
-<body>
     <h1>Lista de Exercícios</h1>
     <form id="formulario">
-        <label for="nomeExercicio">Nome do Exercício:</label>
-        <input type="text" id="nomeExercicio" name="nomeExercicio" placeholder="Ex: Supino" required>
-
-        <label for="series">Número de Séries:</label>
-        <input type="number" id="series" name="series" min="1" placeholder="Ex: 4" required>
-
-        <label for="repeticoes">Número de Repetições:</label>
-        <input type="number" id="repeticoes" name="repeticoes" min="1" placeholder="Ex: 10" required>
+        <div id="camposExercicios"></div>
         <button type="submit" id="submit">Adicionar</button>
     </form>
-
-    <div id="linhasContainer"></div>
 
     <script src="script_form.js"></script>
 </body>

@@ -1,57 +1,63 @@
-document.getElementById("submit").addEventListener("click", function () {
-    const formularioQuantExer = document.getElementById("formularioQuantExer");
-    const camposExercicios = document.getElementById("camposExercicios");
-    const formulario = document.getElementById("formulario");
+document.addEventListener("DOMContentLoaded", function () {
+    // Evento para o botão "calc"
+    document.getElementById("calc").addEventListener("click", function () {
+        const quantExer = parseInt(document.getElementById("quantExer").value, 10);
+        const camposExercicios = document.getElementById("camposExercicios");
 
+        // Limpa o conteúdo anterior
+        camposExercicios.innerHTML = "";
 
-    if (formularioQuantExer) {
-        const gerarCamposButton = document.getElementById("gerarCampos");
+        // Gera os campos para cada exercício
+        for (let i = 1; i <= quantExer; i++) {
+            const exercicioDiv = document.createElement("div");
+            exercicioDiv.innerHTML = `
+                <h3>Exercício ${i}</h3>
+                <label for="nomeExercicio${i}">Nome do Exercício:</label>
+                <input type="text" id="nomeExercicio${i}" name="nomeExercicio${i}" placeholder="Ex: Supino" required>
 
-        gerarCamposButton.addEventListener("click", function () {
-            const quantExer = parseInt(document.getElementById("quantExer").value, 10);
+                <label for="series${i}">Número de Séries:</label>
+                <input type="number" id="series${i}" name="series${i}" min="1" placeholder="Ex: 4" required>
 
-            camposExercicios.innerHTML = "";
+                <label for="repeticoes${i}">Número de Repetições:</label>
+                <input type="number" id="repeticoes${i}" name="repeticoes${i}" min="1" placeholder="Ex: 10" required>
 
-            for (let i = 1; i <= quantExer; i++) {
-                const exercicioDiv = document.createElement("div");
-                exercicioDiv.innerHTML = `
-                    <h3>Exercício ${i}</h3>
-                    <label for="nomeExercicio${i}">Nome do Exercício:</label>
-                    <input type="text" id="nomeExercicio${i}" name="nomeExercicio${i}" placeholder="Ex: Supino" required>
+                <!-- Contêiner para as séries deste exercício -->
+                <div id="seriesContainer${i}" class="series-container"></div>
+            `;
+            camposExercicios.appendChild(exercicioDiv);
+        }
+    });
 
-                    <label for="series${i}">Número de Séries:</label>
-                    <input type="number" id="series${i}" name="series${i}" min="1" placeholder="Ex: 4" required>
+    // Evento para o envio do formulário
+    document.getElementById("formulario").addEventListener("submit", function (event) {
+        event.preventDefault();
 
-                    <label for="repeticoes${i}">Número de Repetições:</label>
-                    <input type="number" id="repeticoes${i}" name="repeticoes${i}" min="1" placeholder="Ex: 10" required>
-                `;
-                camposExercicios.appendChild(exercicioDiv);
-            }
-        });
-    }
+        const quantExer = parseInt(document.getElementById("quantExer").value, 10);
 
-    if (formulario) {
-        formulario.addEventListener("submit", function (event) {
-            event.preventDefault();
+        // Processa cada exercício
+        for (let i = 1; i <= quantExer; i++) {
+            const nome = document.getElementById(`nomeExercicio${i}`).value;
+            const series = parseInt(document.getElementById(`series${i}`).value, 10);
+            const repeticoes = document.getElementById(`repeticoes${i}`).value;
 
-            const nome = document.getElementById("nomeExercicio").value;
-            const series = parseInt(document.getElementById("series").value, 10);
-            const repeticoes = document.getElementById("repeticoes").value;
+            // Seleciona o contêiner de séries para este exercício
+            const seriesContainer = document.getElementById(`seriesContainer${i}`);
 
-            const container = document.getElementById("linhasContainer");
-            container.innerHTML = "";
+            // Limpa o conteúdo anterior
+            seriesContainer.innerHTML = "";
 
-            const titulo = document.createElement("h2");
+            // Adiciona o título do exercício
+            const titulo = document.createElement("h4");
             titulo.textContent = `Exercício: ${nome} - ${repeticoes} repetições`;
-            container.appendChild(titulo);
+            seriesContainer.appendChild(titulo);
 
-            // Gera novas linhas com base no valor informado
-            for (let i = 1; i <= series; i++) {
+            // Gera as séries com checkboxes
+            for (let j = 1; j <= series; j++) {
                 const linha = document.createElement("div");
-                linha.innerHTML = `Série ${i}: <input type="checkbox" id="serie${i}">`;
+                linha.innerHTML = `Série ${j}: <input type="checkbox" id="serie${i}_${j}">`;
                 linha.style.marginBottom = "8px";
-                container.appendChild(linha);
+                seriesContainer.appendChild(linha);
             }
-        });
-    }
+        }
+    });
 });
