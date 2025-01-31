@@ -1,12 +1,11 @@
 body {
-  font-family: Arial, sans-serif;
   text-align: center;
-  background-color: #f0f0f0;
+  background-color: #a5a6b3;
   padding: 20px;
 }
 
 button {
-  background-color: #6200ea;
+  background-color: #0052ea;
   color: white;
   border: none;
   padding: 10px 20px;
@@ -16,5 +15,13 @@ button {
 }
 
 button:hover {
-  background-color: #3700b3;
+  background-color: #0003b3;
+}
+
+.exercicios-titulo {
+  color: #ff0000; /* Exemplo: cor do texto vermelha */
+  font-size: 24px; /* Exemplo: tamanho da fonte */
+  font-weight: bold; /* Exemplo: texto em negrito */
+  margin-bottom: 20px; /* Exemplo: margem inferior */
+  font-family: 'Manrope', sans-serif;
 }
