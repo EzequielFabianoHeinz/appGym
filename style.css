@@ -18,9 +18,18 @@ button:hover {
   background-color: #0003b3;
 }
 
-.exercicios-titulo {
-  color: #ff0000; /* Exemplo: cor do texto vermelha */
+#exercicios-titulo {
+  color: #fbfbfc !important; /* Exemplo: cor do texto vermelha */
+  background-color:#28286d;
   font-size: 24px; /* Exemplo: tamanho da fonte */
+  font-weight: bold; /* Exemplo: texto em negrito */
+  margin-bottom: 20px; /* Exemplo: margem inferior */
+  font-family: 'Manrope', sans-serif;
+}
+
+#labelQuantExer {
+  color: #fbfbfc !important; /* Exemplo: cor do texto vermelha */
+  font-size: 16px; /* Exemplo: tamanho da fonte */
   font-weight: bold; /* Exemplo: texto em negrito */
   margin-bottom: 20px; /* Exemplo: margem inferior */
   font-family: 'Manrope', sans-serif;
