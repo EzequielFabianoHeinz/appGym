@@ -1,19 +1,18 @@
-#first-body {
-  text-align: center;
-  background-color: #a5a6b3;
-  padding: 20px;
-  background-image: url('imagens/3.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
+#first-body,
 #secondy-body {
   text-align: center;
   background-color: #a5a6b3;
   padding: 20px;
-  background-image: url('imagens/3.jpg');
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+#first-body {
+  background-image: url('imagens/3.jpg');
+}
+
+#secondy-body {
+  background-image: url('imagens/4.jpg');
 }
 
 button {
@@ -30,16 +29,11 @@ button:hover {
   background-color: #0003b3;
 }
 
-#exercicios-titulo {
-  color: #fbfbfc !important; /* Exemplo: cor do texto vermelha */
-  background-color:#28286d;
-  font-size: 24px; /* Exemplo: tamanho da fonte */
-  font-weight: bold; /* Exemplo: texto em negrito */
-  margin-bottom: 20px; /* Exemplo: margem inferior */
-  font-family: 'Manrope', sans-serif;
-}
-
-#first-title {
+#exercicios-titulo,
+#list-exercise-title,
+#first-title,
+#labelQuantExer,
+#exercises-list {
   color: #fbfbfc !important; /* Exemplo: cor do texto vermelha */
   font-size: 24px; /* Exemplo: tamanho da fonte */
   font-weight: bold; /* Exemplo: texto em negrito */
@@ -47,11 +41,19 @@ button:hover {
   font-family: 'Manrope', sans-serif;
 }
 
+#quantExer{
+  font-size: 10px;
+  padding: 10px;
+}
 
-#labelQuantExer {
-  color: #fbfbfc !important; /* Exemplo: cor do texto vermelha */
-  font-size: 16px; /* Exemplo: tamanho da fonte */
-  font-weight: bold; /* Exemplo: texto em negrito */
-  margin-bottom: 20px; /* Exemplo: margem inferior */
+.exercicio-titulo,
+.label-nome,
+.label-series,
+.label-repeticoes,
+.series-container,
+.nome-exercicio {
+  color: #fbfbfc;
   font-family: 'Manrope', sans-serif;
+  font-weight: bold;
+  font-size: 16px;
 }

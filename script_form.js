@@ -1,24 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const camposExercicios = document.getElementById("camposExercicios");
+
     // Evento para o botão "calc"
     document.getElementById("calc").addEventListener("click", function () {
         const quantExer = parseInt(document.getElementById("quantExer").value, 10);
-        const camposExercicios = document.getElementById("camposExercicios");
 
-        // Limpa o conteúdo anterior
+         // Limpa o conteúdo anterior
         camposExercicios.innerHTML = "";
 
         // Gera os campos para cada exercício
         for (let i = 1; i <= quantExer; i++) {
             const exercicioDiv = document.createElement("div");
             exercicioDiv.innerHTML = `
-                <h3>Exercício ${i}</h3>
-                <label for="nomeExercicio${i}">Nome do Exercício:</label>
+                <h3 class="exercicio-titulo">Exercício ${i}</h3>
+                <label for="nomeExercicio${i}" class="nome-exercicio">Nome do Exercício:</label>
                 <input type="text" id="nomeExercicio${i}" name="nomeExercicio${i}" placeholder="Ex: Supino" required>
 
-                <label for="series${i}">Número de Séries:</label>
+                <label for="series${i}" class="label-series">Número de Séries:</label>
                 <input type="number" id="series${i}" name="series${i}" min="1" placeholder="Ex: 4" required>
 
-                <label for="repeticoes${i}">Número de Repetições:</label>
+                <label for="repeticoes${i}" class="label-repeticoes">Número de Repetições:</label>
                 <input type="number" id="repeticoes${i}" name="repeticoes${i}" min="1" placeholder="Ex: 10" required>
 
                 <!-- Contêiner para as séries deste exercício -->
@@ -26,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function () {
             `;
             camposExercicios.appendChild(exercicioDiv);
         }
+
+        showPopup(`Você escolheu a quantidade: ${quantExer}`);
     });
 
     // Evento para o envio do formulário
