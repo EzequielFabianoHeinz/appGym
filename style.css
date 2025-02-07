@@ -60,19 +60,10 @@ button:hover {
   border-radius: 4px; /* Adiciona bordas arredondadas, opcional */
 }
 
-.exercicio-titulo{
-  color: #fbfbfc;
-  font-family: 'Manrope', sans-serif;
-  font-weight: bold;
-  font-size: 12px;
-  background-color: #1b1bc9;
-  padding: 8px; /* Adiciona um espaçamento interno para melhorar a aparência */
-  border-radius: 4px; /* Adiciona bordas arredondadas, opcional */
-  width: fit-content;
-  margin: 0 auto;
-}
-
-.series-container{
+.series-container {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.1s ease-in-out;
   color: #fbfbfc;
   font-family: 'Manrope', sans-serif;
   font-weight: bold;
@@ -82,5 +73,9 @@ button:hover {
   padding: 8px; /* Adiciona um espaçamento interno para melhorar a aparência */
   border-radius: 4px; /* Adiciona bordas arredondadas, opcional */
   width: fit-content;
-  margin: 0 auto;
+  margin: 20px auto;
+}
+
+#submit{
+  margin: 20px auto;
 }

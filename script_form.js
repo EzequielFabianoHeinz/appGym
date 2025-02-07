@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
         for (let i = 1; i <= quantExer; i++) {
             const exercicioDiv = document.createElement("div");
             exercicioDiv.innerHTML = `
-                <h3 class="exercicio-titulo">Exercício ${i}</h3>
                 <label for="nomeExercicio${i}" class="nome-exercicio">Nome do Exercício:</label>
                 <input type="text" id="nomeExercicio${i}" name="nomeExercicio${i}" placeholder="Ex: Supino" required>
 
@@ -23,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <input type="number" id="repeticoes${i}" name="repeticoes${i}" min="1" placeholder="Ex: 10" required>
 
                 <!-- Contêiner para as séries deste exercício -->
-                <div id="seriesContainer${i}" class="series-container"></div>
+                <div id="seriescontainer${i}" class="series-container"></div>
             `;
             camposExercicios.appendChild(exercicioDiv);
         }
@@ -44,23 +43,26 @@ document.addEventListener("DOMContentLoaded", function () {
             const repeticoes = document.getElementById(`repeticoes${i}`).value;
 
             // Seleciona o contêiner de séries para este exercício
-            const seriesContainer = document.getElementById(`seriesContainer${i}`);
+            const seriescontainer = document.getElementById(`seriescontainer${i}`);
 
             // Limpa o conteúdo anterior
-            seriesContainer.innerHTML = "";
+            seriescontainer.innerHTML = "";
 
             // Adiciona o título do exercício
             const titulo = document.createElement("h4");
             titulo.textContent = `Exercício: ${nome} - ${repeticoes} repetições`;
-            seriesContainer.appendChild(titulo);
+            seriescontainer.appendChild(titulo);
 
             // Gera as séries com checkboxes
             for (let j = 1; j <= series; j++) {
                 const linha = document.createElement("div");
                 linha.innerHTML = `Série ${j}: <input type="checkbox" id="serie${i}_${j}">`;
                 linha.style.marginBottom = "8px";
-                seriesContainer.appendChild(linha);
+                seriescontainer.appendChild(linha);
             }
+
+            seriescontainer.style.visibility = "visible"; // Mostra o contêiner
+            seriescontainer.style.opacity = "1"; // Torna o contêiner opaco
         }
     });
 });
