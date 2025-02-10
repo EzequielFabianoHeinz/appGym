@@ -32,7 +32,6 @@ button:hover {
 #exercicios-titulo,
 #list-exercise-title,
 #first-title,
-#labelQuantExer,
 #exercises-list {
   color: #fbfbfc !important; /* Exemplo: cor do texto vermelha */
   font-size: 24px; /* Exemplo: tamanho da fonte */
@@ -42,8 +41,16 @@ button:hover {
 }
 
 #quantExer{
-  font-size: 10px;
+  font-size: 8px;
   padding: 10px;
+}
+
+#labelQuantExer{
+  color: #fbfbfc !important;
+  font-size: 12px; /* Exemplo: tamanho da fonte */
+  font-weight: bold; /* Exemplo: texto em negrito */
+  margin-bottom: 20px; /* Exemplo: margem inferior */
+  font-family: 'Manrope', sans-serif;
 }
 
 .label-nome,
