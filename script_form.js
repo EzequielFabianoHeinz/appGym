@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 <input type="text" id="nomeExercicio${i}" name="nomeExercicio${i}" placeholder="Ex: Supino" required>
 
                 <label for="series${i}" class="label-series">Número de Séries:</label>
-                <input type="number" id="series${i}" name="series${i}" min="1" placeholder="Ex: 4" required>
+                <input type="number" id="series${i}" name="series${i}" class="series-input" min="1" placeholder="Ex: 4" required>
 
                 <label for="repeticoes${i}" class="label-repeticoes">Número de Repetições:</label>
                 <input type="number" id="repeticoes${i}" name="repeticoes${i}" min="1" placeholder="Ex: 10" required>

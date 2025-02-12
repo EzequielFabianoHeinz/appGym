@@ -67,6 +67,12 @@ button:hover {
   border-radius: 4px; /* Adiciona bordas arredondadas, opcional */
 }
 
+.series-input{
+  font-size: 12px;
+  padding: 7px;
+  margin: 7px;
+}
+
 .series-container {
   visibility: hidden;
   opacity: 0;
